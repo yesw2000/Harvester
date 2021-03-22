@@ -210,11 +210,12 @@ if __name__ == "__main__":
     # get the pilot wrapper
     wrapper_path = "/tmp/runpilot2-wrapper.sh"
     # wrapper_url = "http://ai-idds-03.cern.ch/static/images/payload/runpilot2-wrapper.sh"
-    # wrapper_string = get_url(wrapper_url)
-    # with open(wrapper_path, "w") as wrapper_file:
-    #    wrapper_file.write(wrapper_string)
-    # os.chmod(wrapper_path, 0o544)  # make pilot wrapper executable
-    # logging.debug('[main] downloaded pilot wrapper')
+    wrapper_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/runpilot2-wrapper.sh"
+    wrapper_string = get_url(wrapper_url)
+    with open(wrapper_path, "w") as wrapper_file:
+       wrapper_file.write(wrapper_string)
+    os.chmod(wrapper_path, 0o544)  # make pilot wrapper executable
+    logging.debug('[main] downloaded pilot wrapper')
 
     # execute the pilot wrapper
     logging.debug('[main] starting pilot wrapper...')

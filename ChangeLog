@@ -8,3 +8,8 @@
   * pilots_starter.py
     Removed one option "-a" to pass to pilot2, otherwise the new pilot2
     will use that directory to create a new work directory.
+
+2021-03-22 Shuwei Ye <yesw@bnl.gov>
+  * pilots_starter.py
+    Changed the location of runpilot2-wrapper.sh to 
+    https://raw.githubusercontent.com/
