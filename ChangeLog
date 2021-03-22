@@ -1,0 +1,10 @@
+2021-03-22 Shuwei Ye <yesw@bnl.gov>
+    Removed the dependencies on CVMFS and ARLB, and made it work
+    with the new pilot2 on work directory.
+  * runpilot2-wrapper.sh
+    Removed the dependencies of CVMFS and ALRB,
+    The following functions are removed: 
+        check_cvmfs, setup_alrb, setup_local, setup_shoal, 
+  * pilots_starter.py
+    Removed one option "-a" to pass to pilot2, otherwise the new pilot2
+    will use that directory to create a new work directory.
