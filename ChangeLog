@@ -1,4 +1,8 @@
 2021-05-12 Shuwei Ye <yesw@bnl.gov>
+  * runpilot2-wrapper.sh
+    Improved the python version check to be compatible with python3
+
+2021-05-12 Shuwei Ye <yesw@bnl.gov>
   * pilots_starter.py
     Added some protection on CONFIG_FILES.
   * runpilot2-wrapper.sh
