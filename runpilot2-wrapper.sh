@@ -369,7 +369,7 @@ function main() {
   # queuedata_json_url="http://ai-idds-01.cern.ch:25080/cache/schedconfig/${sarg}.all.json"
   # queuedata_json_url="https://datalake-cric.cern.ch/api/atlas/pandaqueue/query/?json&pandaqueue=${sarg}"
   # curl -k --connect-timeout 30 --max-time 180 -sSL ${queuedata_json_url} > cric_pandaqueues.json
-  # curl -k --connect-timeout 30 --max-time 180 -sSL "https://datalake-cric.cern.ch/api/atlas/pandaqueue/query/?json" > queuedata.json
+  curl -k --connect-timeout 30 --max-time 180 -sSL "https://datalake-cric.cern.ch/api/atlas/pandaqueue/query/?json" > queuedata.json
   # curl -k --connect-timeout 30 --max-time 180 -sSL "https://datalake-cric.cern.ch/api/atlas/ddmendpoint/query/?json" > cric_ddmendpoints.json
   base_github="https://raw.githubusercontent.com/yesw2000/Harvester/master"
   curl -k --connect-timeout 30 -sSL "${base_github}/{cric_pandaqueues.json}" -o "#1"

@@ -118,7 +118,8 @@ def copy_files_in_dir(src_dir, dst_dir):
     # src_files = os.listdir(src_dir)
     for file_name in CONFIG_FILES:
         full_file_name = os.path.join(src_dir, file_name)
-        shutil.copy(full_file_name, dst_dir)
+        if os.path.exists(full_file_name):
+           shutil.copy(full_file_name, dst_dir)
 
 
 def get_configuration():
@@ -190,6 +191,11 @@ def get_configuration():
     if tmpdir:
         global WORK_DIR
         WORK_DIR = tmpdir
+        global CONFIG_DIR
+        if not os.path.exists(CONFIG_DIR):
+           CONFIG_DIR = tmpdir + '/jobconfig'
+           if not os.path.exists(CONFIG_DIR):
+              os.mkdir(CONFIG_DIR)
 
     return proxy_path, panda_site, panda_queue, resource_type, prodSourceLabel, job_type, harvester_id, \
            worker_id, logs_frontend_w, logs_frontend_r, stdout_name, submit_mode

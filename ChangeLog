@@ -1,4 +1,10 @@
 2021-05-12 Shuwei Ye <yesw@bnl.gov>
+  * pilots_starter.py
+    Added some protection on CONFIG_FILES.
+  * runpilot2-wrapper.sh
+    Added the downloading of queuedata.json to speed up pilot running.
+
+2021-05-12 Shuwei Ye <yesw@bnl.gov>
   * runpilot2-wrapper.sh
     Changed the variable pybin to try "python3" first.
 
