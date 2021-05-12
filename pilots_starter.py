@@ -190,8 +190,6 @@ def get_configuration():
     if tmpdir:
         global WORK_DIR
         WORK_DIR = tmpdir
-        global CONFIG_DIR
-        CONFIG_DIR = tmpdir + '/jobconfig'
 
     return proxy_path, panda_site, panda_queue, resource_type, prodSourceLabel, job_type, harvester_id, \
            worker_id, logs_frontend_w, logs_frontend_r, stdout_name, submit_mode
@@ -241,8 +239,9 @@ if __name__ == "__main__":
         # and therefore the pilot cannot execute in the same directory
         copy_files_in_dir(CONFIG_DIR, WORK_DIR)
 
-    command = "/tmp/runpilot2-wrapper.sh {0} -i PR --piloturl https://ai-idds-03.cern.ch/static/images/payload/pilot2-2.9.5.9.tar.gz -w generic --pilot-user generic --url=https://ai-idds-01.cern.ch -d --harvester-submit-mode {1} --allow-same-user=False -t | tee /tmp/wrapper-wid.log". \
-        format(wrapper_params, submit_mode)
+    pilot_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/pilot2-gcs.tgz"
+    command = "/tmp/runpilot2-wrapper.sh {0} -i PR --piloturl {1} -w generic --pilot-user generic --url=https://ai-idds-01.cern.ch -d --harvester-submit-mode {2} --allow-same-user=False -t | tee /tmp/wrapper-wid.log". \
+        format(wrapper_params, pilot_url, submit_mode)
     try:
         subprocess.call(command, shell=True)
     except:

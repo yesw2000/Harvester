@@ -1,3 +1,20 @@
+2021-05-12 Shuwei Ye <yesw@bnl.gov>
+    Added two json files for DDM-endpoint (GKE-LSST_LOGS) and panda queue
+    DOMA_LSST_DEV, the full pilot2.
+  * cric_ddmendpoints.json
+    Configuration for RSE=GKE-LSST_LOGS
+  * cric_pandaqueues.json
+    Configuration for panda queue=DOMA_LSST_DEV
+  * pilot2-gcs.tgz
+    The full pilot2 package with plugin gs.py for GCS bucket
+  * pilots_starter.py
+    - Changed the location of pilot2
+    - Some changes with CONFIG_DIR to make push works for k8s
+  * runpilot2-wrapper.sh
+    - Changed the location to download cric_pandaqueues.json
+    - Changed the location to download cric_ddmendpoints.json
+
+
 2021-03-22 Shuwei Ye <yesw@bnl.gov>
     Removed the dependencies on CVMFS and ARLB, and made it work
     with the new pilot2 on work directory.

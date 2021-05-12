@@ -1,0 +1,185 @@
+{
+  "GKE-LSST_LOGS": {
+    "aprotocols": {
+      "d": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "delete_wan": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "pr": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "pw": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "r": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "read_lan": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "read_wan": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ] 
+      ], 
+      "w": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "write_lan": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ], 
+      "write_wan": [
+        [
+          "gs://drp-us-central1-logging/", 
+          0, 
+          "logs"
+        ]
+      ]
+    }, 
+    "arprotocols": {
+      "delete_wan": [
+        {
+          "endpoint": "gs://drp-us-central1-logging/", 
+          "flavour": "GCS", 
+          "id": 28, 
+          "path": "logs"
+        }
+      ], 
+      "read_lan": [
+        {
+          "endpoint": "gs://drp-us-central1-logging/", 
+          "flavour": "GCS", 
+          "id": 29, 
+          "path": "logs"
+        }
+      ], 
+      "read_wan": [
+        {
+          "endpoint": "gs://drp-us-central1-logging/", 
+          "flavour": "GCS", 
+          "id": 29, 
+          "path": "logs"
+        }
+      ], 
+      "write_wan": [
+        {
+          "endpoint": "gs://drp-us-central1-logging/", 
+          "flavour": "GCS", 
+          "id": 29, 
+          "path": "logs"
+        }
+      ]
+    }, 
+    "cloud": "US", 
+    "country": "United States", 
+    "country_code": "US", 
+    "datapolicies": [
+      "AnalysisData", 
+      "T0Disk", 
+      "T0TaskOutput"
+    ], 
+    "endpoint": "", 
+    "id": 60, 
+    "is_cache": false, 
+    "is_deterministic": true, 
+    "is_mkdir": false, 
+    "is_tape": false, 
+    "is_volatile": false, 
+    "last_modified": "2021-05-08T14:28:15", 
+    "name": "GKE-LSST_LOGS", 
+    "params": {}, 
+    "phys_groups": [], 
+    "quotas": {}, 
+    "rc": "GKE", 
+    "rc_accounting": "", 
+    "rc_country": "United States", 
+    "rc_country_code": "US", 
+    "rc_site": "GKE-LSST", 
+    "rc_site_state": "ACTIVE", 
+    "rcsite": "GKE-LSST", 
+    "resource": {
+      "basepath": "", 
+      "bucket_id": 3, 
+      "endpoint": "logs", 
+      "id": 30, 
+      "name": "logs", 
+      "service": "GKE_OS_0"
+    }, 
+    "rprotocols": {
+      "28": {
+        "activities": [
+          "delete_wan"
+        ], 
+        "basepath": "", 
+        "endpoint": "gs://drp-us-central1-logging/", 
+        "flavour": "GCS", 
+        "id": 28
+      }, 
+      "29": {
+        "activities": [
+          "read_lan", 
+          "read_wan", 
+          "write_lan", 
+          "write_wan"
+        ], 
+        "basepath": "", 
+        "endpoint": "gs://drp-us-central1-logging/", 
+        "flavour": "GCS", 
+        "id": 29
+      }
+    }, 
+    "se": "gs://drp-us-central1-logging/", 
+    "se_flavour": "GCS", 
+    "servedrestfts": {
+      "TESTING": ""
+    }, 
+    "site": "GKE-LSST", 
+    "site_state": "ACTIVE", 
+    "space_method": "storage", 
+    "space_usage_url": "", 
+    "state": "ACTIVE", 
+    "state_comment": "Object was cloned from BNL-ATLAS_LOGS_new mannually", 
+    "state_update": "2021-05-08T14:28:15", 
+    "status": "", 
+    "su": "GKE-LSST_OS", 
+    "tier_level": 1, 
+    "token": "logs", 
+    "type": "OS_LOGS"
+  }
+}
