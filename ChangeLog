@@ -1,4 +1,8 @@
 2021-05-12 Shuwei Ye <yesw@bnl.gov>
+  * runpilot2-wrapper.sh
+    Changed the variable pybin to try "python3" first.
+
+2021-05-12 Shuwei Ye <yesw@bnl.gov>
     Added two json files for DDM-endpoint (GKE-LSST_LOGS) and panda queue
     DOMA_LSST_DEV, the full pilot2.
   * cric_ddmendpoints.json

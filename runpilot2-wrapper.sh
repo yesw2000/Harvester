@@ -50,7 +50,7 @@ function get_workdir {
 
 
 function check_python() {
-  pybin=$(which python)
+  pybin=$(which python3 2>/dev/null || which python 2>/dev/null)
   if [[ $? -ne 0 ]]; then
     log "FATAL: python not found in PATH"
     err "FATAL: python not found in PATH"
