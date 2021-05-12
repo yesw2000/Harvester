@@ -66,7 +66,7 @@ function check_python() {
     
   pyver=$($pybin -c "import sys; print('%03d%03d%03d' % sys.version_info[0:3])")
   # check if native python version > 2.6.0
-  if [[ ${pyver} -ge 002006000 ]] ; then
+  if [[ "${pyver}" > "002006000" ]] ; then
     log "Native python version is > 2.6.0 (${pyver})"
     log "Using ${pybin} for python compatibility"
   else
