@@ -1,3 +1,7 @@
+2021-05-13 Shuwei Ye <yesw@bnl.gov>
+  * pilots_starter-logFile.py
+    A copy of pilots_starter.py with the logging to /tmp/starter.log
+
 2021-05-12 Shuwei Ye <yesw@bnl.gov>
   * runpilot2-wrapper.sh
     Improved the python version check to be compatible with python3
