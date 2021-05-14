@@ -372,7 +372,7 @@ function main() {
   curl -k --connect-timeout 30 --max-time 180 -sSL "https://datalake-cric.cern.ch/api/atlas/pandaqueue/query/?json" > queuedata.json
   # curl -k --connect-timeout 30 --max-time 180 -sSL "https://datalake-cric.cern.ch/api/atlas/ddmendpoint/query/?json" > cric_ddmendpoints.json
   base_github="https://raw.githubusercontent.com/yesw2000/Harvester/master"
-  curl -k --connect-timeout 30 -sSL "${base_github}/{cric_pandaqueues.json}" -o "#1"
+  curl -k --connect-timeout 30 -sSL "${base_github}/cric_pandaqueues-timefloor.json" -o cric_pandaqueues.json
   curl -k --connect-timeout 30 -sSL "${base_github}/{cric_ddmendpoints.json}" -o "#1"
   export PILOT_HOME=`pwd`
   ls -l *.json

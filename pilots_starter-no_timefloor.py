@@ -30,8 +30,7 @@ PJD = 'pandaJobData.out'
 PFC = 'PoolFileCatalog_H.xml'
 CONFIG_FILES = [PJD, PFC]
 
-logging.basicConfig(filename='/tmp/starter.log', filemode='a', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
-#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', stream=sys.stdout)
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s', stream=sys.stdout)
 
 
 # handlers=[logging.FileHandler('/tmp/vm_script.log'), logging.StreamHandler(sys.stdout)])
@@ -215,7 +214,7 @@ if __name__ == "__main__":
     # get the pilot wrapper
     wrapper_path = "/tmp/runpilot2-wrapper.sh"
     # wrapper_url = "http://ai-idds-03.cern.ch/static/images/payload/runpilot2-wrapper.sh"
-    wrapper_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/runpilot2-wrapper-timefloor.sh"
+    wrapper_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/runpilot2-wrapper-no_timefloor.sh"
     wrapper_string = get_url(wrapper_url)
     with open(wrapper_path, "w") as wrapper_file:
        wrapper_file.write(wrapper_string)
@@ -241,11 +240,10 @@ if __name__ == "__main__":
     wrapper_params = '-s {0} -r {1} -q {2} {3} {4} {5}'.format(panda_site, panda_queue, panda_queue,
                                                               resource_type_option, psl_option, job_type_option)
 
-    # temporarily disable copy_files_in_dir because PUSH is incompatible with multijob in pilot
-    # if submit_mode == 'PUSH':
-    #    # job configuration files need to be copied, because k8s configmap mounts as read-only file system
-    #    # and therefore the pilot cannot execute in the same directory
-    #    copy_files_in_dir(CONFIG_DIR, WORK_DIR)
+    if submit_mode == 'PUSH':
+        # job configuration files need to be copied, because k8s configmap mounts as read-only file system
+        # and therefore the pilot cannot execute in the same directory
+        copy_files_in_dir(CONFIG_DIR, WORK_DIR)
 
     pilot_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/pilot2-gcs.tgz"
     command = "/tmp/runpilot2-wrapper.sh {0} -i PR --piloturl {1} -w generic --pilot-user generic --url=https://ai-idds-01.cern.ch -d --harvester-submit-mode {2} --allow-same-user=False -t | tee /tmp/wrapper-wid.log". \

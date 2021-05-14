@@ -1,4 +1,17 @@
 2021-05-13 Shuwei Ye <yesw@bnl.gov>
+  * cric_pandaqueues-timefloor.json
+    Set timefloor=60m, to allow multiple payload jobs in one single pilot.
+    (That was the case before)
+  * cric_pandaqueues-no_timefloor.json
+    Set timefloor=null,to allow one payload job in one single pilot.
+  * runpilot2-wrapper-{timefloor,no_timefloor}.sh
+    Using {timefloor,no_timefloor}-version of pandaqueue respectively.
+  * pilots_starter-{timefloor,no_timefloor}.py
+    Using {timefloor,no_timefloor}-version of runpilot2-wrapper.sh
+  * pilots_starter-logFile.py
+    Using timefloor.
+
+2021-05-13 Shuwei Ye <yesw@bnl.gov>
   * pilots_starter-logFile.py
     A copy of pilots_starter.py with the logging to /tmp/starter.log
 
