@@ -142,13 +142,22 @@
   },
   "DOMA_LSST_GOOGLE_TEST": {
     "accesscontrol": "", 
-    "acopytools": {}, 
+    "acopytools": {
+      "default": ["gs"]
+    }, 
     "allow_lan": true, 
     "allow_wan": false, 
     "allowednode": "", 
     "allowjem": true, 
     "appdir": "", 
-    "astorages": {}, 
+    "astorages": {
+      "pls": [
+        "GKE-LSST_LOGS"
+      ],
+      "pw": [
+        "GKE-LSST_LOGS"
+      ]
+    }, 
     "atlas_site": "OSG", 
     "autosetup_post": "", 
     "autosetup_pre": "", 
@@ -275,13 +284,22 @@
   },
   "DOMA_LSST_GOOGLE_TEST_HIMEM": {
     "accesscontrol": "", 
-    "acopytools": {}, 
+    "acopytools": {
+      "default": ["gs"]
+    }, 
     "allow_lan": true, 
     "allow_wan": false, 
     "allowednode": "", 
     "allowjem": true, 
     "appdir": "", 
-    "astorages": {}, 
+    "astorages": {
+      "pls": [
+        "GKE-LSST_LOGS"
+      ],
+      "pw": [
+        "GKE-LSST_LOGS"
+      ]
+    }, 
     "atlas_site": "OSG", 
     "autosetup_post": "", 
     "autosetup_pre": "", 
