@@ -130,20 +130,13 @@ function check_arcproxy() {
 
 function pilot_cmd() {
 
-  # test if not harvester job 
-  if [[ ${harvesterflag} == 'false' ]] ; then  
-    if [[ -n ${pilotversion} ]]; then
-      cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
-    else
-      cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
-    fi
-  else
-    # check to see if we are running OneToMany Harvester workflow (aka Jumbo Jobs)
-    if [[ ${workflowarg} == 'OneToMany' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
-      cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} -a ${HARVESTER_PILOT_WORKDIR} --pilot-user=generic ${pilotargs}"
-    else
-      cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
-    fi
+  cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
+  # test if not harvester job and running OneToMany Harvester workflow (aka Jumbo Jobs)
+  if [[ ${harvesterflag} == 'true' ]] && [[ ${workflowarg} == 'OneToMany' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
+     # The option x was added in pilot2-2.12.4.7
+     # set the maximum failures on getjob
+     # 
+     cmd="$cmd -x 3 -a ${HARVESTER_PILOT_WORKDIR}"
   fi
   echo ${cmd}
 }
