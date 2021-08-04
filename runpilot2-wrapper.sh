@@ -130,7 +130,7 @@ function check_arcproxy() {
 
 function pilot_cmd() {
 
-  if [[ "X${harvester-datadir} == "X" ]]; then
+  if [[ "X${harvester-datadir}" == "X" ]]; then
     opt-harvester-datadir=""
   else
     opt-harvester-datadir="--harvester-datadir ${harvester-datadir}"
