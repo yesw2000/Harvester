@@ -130,12 +130,13 @@ function check_arcproxy() {
 
 function pilot_cmd() {
 
-  if [[ "X${harvester-datadir}" == "X" ]]; then
-    opt-harvester-datadir=""
-  else
-    opt-harvester-datadir="--harvester-datadir ${harvester-datadir}"
-  fi
-  cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} ${opt-harvester-datadir} --pilot-user=generic ${pilotargs}"
+  # if [[ "X${harvester_datadir}" == "X" ]]; then
+  #   opt_harvester_datadir=""
+  # else
+  #   opt_harvester_datadir="--harvester-datadir ${harvester_datadir}"
+  # fi
+  # cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} ${opt_harvester_datadir} --pilot-user=generic ${pilotargs}"
+  cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
   # test if not harvester job and running OneToMany Harvester workflow (aka Jumbo Jobs)
   if [[ ${harvesterflag} == 'true' ]] && [[ ${workflowarg} == 'OneToMany' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
      # The option x was added in pilot2-2.12.4.7
@@ -475,7 +476,7 @@ containerflag='false'
 containerarg=''
 harvesterflag='false'
 harvesterarg=''
-harvester-datadir=''
+# harvester_datadir=''
 workflowarg=''
 iarg='PR'
 jarg='managed'
@@ -518,11 +519,11 @@ case $key in
     shift
     shift
     ;;
-    --harvester-datadir)
-    harvester-datadir="$2"
-    shift
-    shift
-    ;;
+    # --harvester-datadir)
+    # harvester_datadir="$2"
+    # shift
+    # shift
+    # ;;
     --mute)
     mute='true'
     shift
