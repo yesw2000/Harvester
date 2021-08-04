@@ -138,7 +138,7 @@ function pilot_cmd() {
   # cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} ${opt_harvester_datadir} --pilot-user=generic ${pilotargs}"
   cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic ${pilotargs}"
   # test if not harvester job and running OneToMany Harvester workflow (aka Jumbo Jobs)
-  if [[ ${harvesterflag} == 'true' ]] && [[ ${workflowarg} == 'OneToMany' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
+  if [[ ${harvesterflag} == 'true' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
      # The option x was added in pilot2-2.12.4.7
      # set the maximum failures on getjob
      # 
