@@ -143,7 +143,7 @@ function pilot_cmd() {
   cmd="${pybin} pilot2/pilot.py -q ${qarg} -i ${iarg} -j ${jarg} --pilot-user=generic -x 3 ${pilotargs}"
   # test if not harvester job and running OneToMany Harvester workflow (aka Jumbo Jobs)
   if [[ ${harvesterflag} == 'true' ]] && [ -z ${HARVESTER_PILOT_WORKDIR+x} ] ; then
-     cmd="$cmd a ${HARVESTER_PILOT_WORKDIR}"
+     cmd="$cmd -a ${HARVESTER_PILOT_WORKDIR}"
   fi
   echo ${cmd}
 }
