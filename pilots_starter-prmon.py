@@ -269,7 +269,7 @@ if __name__ == "__main__":
         wrapper_params += " --harvester-datadir %s" % WORK_DIR
 
     pilot_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/pilot2-prmon.tgz"
-    command = "/tmp/runpilot2-wrapper.sh {0} -i PR --piloturl {1} -w generic --pilot-user generic --url=https://ai-idds-01.cern.ch -d --harvester-submit-mode {2} --allow-same-user=False -t | tee /tmp/wrapper-wid.log". \
+    command = "/tmp/runpilot2-wrapper.sh {0} -i PR --piloturl {1} -w generic --pilot-user rubin --url=https://ai-idds-01.cern.ch -d --harvester-submit-mode {2} --allow-same-user=False -t | tee /tmp/wrapper-wid.log". \
         format(wrapper_params, pilot_url, submit_mode)
     try:
         subprocess.call(command, shell=True)
