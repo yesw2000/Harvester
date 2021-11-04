@@ -1,3 +1,7 @@
+2021-11-04 Shuwei Ye <yesw@bnl.gov>
+  * Added pilot2-prmon.tgz to allow run prmon (memory monitor) Rubin jobs
+  * Many missing docs for the changes between 2021-05-13 and 2021-11-04
+
 2021-05-13 Shuwei Ye <yesw@bnl.gov>
   * cric_pandaqueues-timefloor.json
     Set timefloor=60m, to allow multiple payload jobs in one single pilot.
