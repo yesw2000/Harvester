@@ -228,7 +228,7 @@ if __name__ == "__main__":
     # get the pilot wrapper
     wrapper_path = "/tmp/runpilot2-wrapper.sh"
     # wrapper_url = "http://ai-idds-03.cern.ch/static/images/payload/runpilot2-wrapper.sh"
-    wrapper_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/runpilot2-wrapper.sh"
+    wrapper_url = "https://raw.githubusercontent.com/yesw2000/Harvester/master/runpilot2-wrapper-prmon.sh"
     wrapper_string = get_url(wrapper_url)
     with open(wrapper_path, "w") as wrapper_file:
        wrapper_file.write(wrapper_string)
